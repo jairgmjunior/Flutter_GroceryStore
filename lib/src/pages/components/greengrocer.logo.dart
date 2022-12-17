@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
+import 'package:greengrocer/src/services/utils.service.dart';
 
 class GreenGrocerLogo extends StatelessWidget {
-  const GreenGrocerLogo(
+  GreenGrocerLogo(
       {Key? key,
       required this.fontSize,
       required this.greenColor,
@@ -11,6 +13,8 @@ class GreenGrocerLogo extends StatelessWidget {
   final double fontSize;
   final Color greenColor;
   final Color grocerColor;
+
+  final utilService = UtilService();
 
   @override
   Widget build(BuildContext context) {
