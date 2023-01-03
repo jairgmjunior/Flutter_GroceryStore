@@ -170,7 +170,6 @@ class _HomeTabState extends State<HomeTab> {
             ),
 
             //grid
-
             Expanded(
               child: !isLoading
                   ? GridView.builder(

@@ -1,10 +1,9 @@
-import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:greengrocer/src/pages/auth/signin.sup.screen.dart';
-import 'package:greengrocer/src/pages/auth/signin.up.screen.dart';
-import 'package:greengrocer/src/pages/base/base.screen.dart';
 import 'package:greengrocer/src/pages/components/custom.textfield.dart';
 import 'package:greengrocer/src/config/custom.colors.dart';
+import 'package:get/get.dart';
+import 'package:greengrocer/src/routes/app.pages.dart';
 
 class SigninScreen extends StatelessWidget {
   const SigninScreen({Key? key}) : super(key: key);
@@ -62,11 +61,7 @@ class SigninScreen extends StatelessWidget {
                               shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(18))),
                           onPressed: () {
-                            Navigator.of(context).pushReplacement(
-                              MaterialPageRoute(builder: (p) {
-                                return const BaseScreen();
-                              }),
-                            );
+                            Get.offNamed(PagesRoutes.baseRoute);
                           },
                           child: const Text(
                             'Entrar',
@@ -131,13 +126,7 @@ class SigninScreen extends StatelessWidget {
                                 const BorderSide(width: 2, color: Colors.green),
                           ),
                           onPressed: () {
-                            Navigator.of(context).push(
-                              MaterialPageRoute(
-                                builder: (p) {
-                                  return SigninUpScreen();
-                                },
-                              ),
-                            );
+                            Get.toNamed(PagesRoutes.signUpRoute);
                           },
                           child: const Text(
                             'Criar Senha',
