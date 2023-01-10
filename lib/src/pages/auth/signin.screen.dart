@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:greengrocer/src/pages/auth/controller/auth.controller.dart';
 import 'package:greengrocer/src/pages/auth/signin.sup.screen.dart';
 import 'package:greengrocer/src/pages/components/custom.textfield.dart';
 import 'package:greengrocer/src/config/custom.colors.dart';
@@ -13,6 +14,9 @@ class SigninScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
+
+    final emailController = TextEditingController();
+    final passwordController = TextEditingController();
 
     return Scaffold(
       backgroundColor: CustomColors.customSwatchColor,
@@ -48,6 +52,7 @@ class SigninScreen extends StatelessWidget {
                       children: [
                         //Inputs
                         CustomTextField(
+                          controller: emailController,
                           icon: Icons.email,
                           label: 'E-mail',
                           validator: (email) {
@@ -63,6 +68,7 @@ class SigninScreen extends StatelessWidget {
                           },
                         ),
                         CustomTextField(
+                          controller: passwordController,
                           icon: Icons.lock,
                           label: 'Senha',
                           isSecret: true,
@@ -82,19 +88,36 @@ class SigninScreen extends StatelessWidget {
                         //Botão Entrar
                         SizedBox(
                           height: 50,
-                          child: ElevatedButton(
-                            style: ElevatedButton.styleFrom(
-                                shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(18))),
-                            onPressed: () {
-                              //Get.offNamed(PagesRoutes.baseRoute);
+                          child: GetX<AuthController>(
+                            builder: (authController) {
+                              return ElevatedButton(
+                                style: ElevatedButton.styleFrom(
+                                    shape: RoundedRectangleBorder(
+                                        borderRadius:
+                                            BorderRadius.circular(18))),
+                                onPressed: authController.isLoading.value
+                                    ? null
+                                    : () {
+                                        //Get.offNamed(PagesRoutes.baseRoute);
+                                        FocusScope.of(context).unfocus();
 
-                              if (_formKey.currentState!.validate()) {}
+                                        if (_formKey.currentState!.validate()) {
+                                          String email = emailController.text;
+                                          String password =
+                                              passwordController.text;
+
+                                          authController.signIn(
+                                              email: email, password: password);
+                                        }
+                                      },
+                                child: authController.isLoading.value
+                                    ? const CircularProgressIndicator()
+                                    : const Text(
+                                        'Entrar',
+                                        style: TextStyle(fontSize: 18),
+                                      ),
+                              );
                             },
-                            child: const Text(
-                              'Entrar',
-                              style: TextStyle(fontSize: 18),
-                            ),
                           ),
                         ),
 
