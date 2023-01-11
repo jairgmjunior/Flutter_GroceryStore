@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:greengrocer/src/config/custom.colors.dart';
+import 'package:greengrocer/src/config/custom_colors.dart';
 
 class QuantityComponent extends StatelessWidget {
   final int value;

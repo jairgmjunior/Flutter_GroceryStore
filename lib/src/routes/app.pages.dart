@@ -1,8 +1,8 @@
 import 'package:get/get.dart';
-import 'package:greengrocer/src/pages/auth/signin.screen.dart';
-import 'package:greengrocer/src/pages/auth/signin.up.screen.dart';
-import 'package:greengrocer/src/pages/base/base.screen.dart';
-import 'package:greengrocer/src/pages/splash/splash.screen.dart';
+import 'package:greengrocer/src/pages/auth/view/signin_screen.dart';
+import 'package:greengrocer/src/pages/auth/view/signin_up_screen.dart';
+import 'package:greengrocer/src/pages/base/base_screen.dart';
+import 'package:greengrocer/src/pages/splash/splash_screen.dart';
 
 abstract class AppPages {
   static final pages = <GetPage>[

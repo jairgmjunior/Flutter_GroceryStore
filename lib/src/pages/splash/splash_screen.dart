@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:greengrocer/src/config/custom.colors.dart';
-import 'package:greengrocer/src/pages/components/greengrocer.logo.dart';
+import 'package:greengrocer/src/config/custom_colors.dart';
+import 'package:greengrocer/src/pages/components/greengrocer_logo.dart';
 import 'package:greengrocer/src/routes/app.pages.dart';
 
 class SplashScreen extends StatefulWidget {

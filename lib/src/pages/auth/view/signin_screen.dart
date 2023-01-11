@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:greengrocer/src/pages/auth/controller/auth.controller.dart';
-import 'package:greengrocer/src/pages/auth/signin.sup.screen.dart';
-import 'package:greengrocer/src/pages/components/custom.textfield.dart';
-import 'package:greengrocer/src/config/custom.colors.dart';
+import 'package:greengrocer/src/pages/auth/controller/auth_controller.dart';
+import 'package:greengrocer/src/pages/auth/view/signin_sup_screen.dart';
+import 'package:greengrocer/src/pages/components/custom_textfield.dart';
+import 'package:greengrocer/src/config/custom_colors.dart';
 import 'package:get/get.dart';
 import 'package:greengrocer/src/routes/app.pages.dart';
 

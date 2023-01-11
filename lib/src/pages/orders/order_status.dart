@@ -1,7 +1,5 @@
-import 'dart:isolate';
-
 import 'package:flutter/material.dart';
-import 'package:greengrocer/src/config/custom.colors.dart';
+import 'package:greengrocer/src/config/custom_colors.dart';
 
 class OrderStatus extends StatelessWidget {
   final String status;

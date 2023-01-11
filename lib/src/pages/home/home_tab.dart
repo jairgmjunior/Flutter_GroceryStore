@@ -3,12 +3,12 @@ import 'package:add_to_cart_animation/add_to_cart_icon.dart';
 import 'package:badges/badges.dart';
 import 'package:flutter/material.dart';
 import 'package:greengrocer/src/pages/components/custom_shimmer.dart';
-import 'package:greengrocer/src/pages/components/greengrocer.logo.dart';
-import 'package:greengrocer/src/config/custom.colors.dart';
+import 'package:greengrocer/src/pages/components/greengrocer_logo.dart';
+import 'package:greengrocer/src/config/custom_colors.dart';
 import 'package:greengrocer/src/config/app.data.dart' as app_data;
-import 'package:greengrocer/src/pages/home/item.tile.dart';
+import 'package:greengrocer/src/pages/home/item_tile.dart';
 
-import 'category.tile.dart';
+import 'category_tile.dart';
 
 class HomeTab extends StatefulWidget {
   const HomeTab({Key? key}) : super(key: key);

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:greengrocer/src/config/custom.colors.dart';
-import 'package:greengrocer/src/models/cart.item.model.dart';
-import 'package:greengrocer/src/pages/cart/cart.tile.dart';
-import 'package:greengrocer/src/pages/components/payment.dialog.dart';
+import 'package:greengrocer/src/config/custom_colors.dart';
+import 'package:greengrocer/src/models/cart_item.model.dart';
+import 'package:greengrocer/src/pages/cart/cart_tile.dart';
+import 'package:greengrocer/src/pages/components/payment_dialog.dart';
 import 'package:greengrocer/src/services/utils.service.dart';
 import 'package:greengrocer/src/config/app.data.dart' as app_data;
 
@@ -89,7 +89,7 @@ class _CartTabState extends State<CartTab> {
                   height: 50,
                   child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
-                      primary: CustomColors.customSwatchColor,
+                      backgroundColor: CustomColors.customSwatchColor,
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(18)),
                     ),

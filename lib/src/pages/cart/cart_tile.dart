@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:greengrocer/src/config/custom.colors.dart';
-import 'package:greengrocer/src/models/cart.item.model.dart';
-import 'package:greengrocer/src/pages/components/quantity.component.dart';
+import 'package:greengrocer/src/config/custom_colors.dart';
+import 'package:greengrocer/src/models/cart_item.model.dart';
+import 'package:greengrocer/src/pages/components/quantity_component.dart';
 import 'package:greengrocer/src/services/utils.service.dart';
 
 class CartTile extends StatefulWidget {

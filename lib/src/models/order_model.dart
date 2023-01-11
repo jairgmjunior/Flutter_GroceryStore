@@ -1,4 +1,4 @@
-import 'package:greengrocer/src/models/cart.item.model.dart';
+import 'package:greengrocer/src/models/cart_item.model.dart';
 
 class OrderModel {
   String id;

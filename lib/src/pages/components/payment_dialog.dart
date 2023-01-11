@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:greengrocer/src/models/order.model.dart';
+import 'package:greengrocer/src/models/order_model.dart';
 import 'package:greengrocer/src/services/utils.service.dart';
 import 'package:qr_flutter/qr_flutter.dart';
 
@@ -85,14 +85,14 @@ class PaymentDialog extends StatelessWidget {
           ),
 
           Positioned(
+            top: 0,
+            right: 0,
             child: IconButton(
               onPressed: () {
                 Navigator.of(context).pop();
               },
               icon: const Icon(Icons.close),
             ),
-            top: 0,
-            right: 0,
           ),
         ],
       ),

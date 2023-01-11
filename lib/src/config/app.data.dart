@@ -1,7 +1,7 @@
-import 'package:greengrocer/src/models/cart.item.model.dart';
-import 'package:greengrocer/src/models/item.model.dart';
-import 'package:greengrocer/src/models/order.model.dart';
-import 'package:greengrocer/src/models/user.model.dart';
+import 'package:greengrocer/src/models/cart_item.model.dart';
+import 'package:greengrocer/src/models/item_model.dart';
+import 'package:greengrocer/src/models/order_model.dart';
+import 'package:greengrocer/src/models/user_model.dart';
 
 ItemModel apple = ItemModel(
   itemName: 'Maçã',

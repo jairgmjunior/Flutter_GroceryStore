@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:greengrocer/src/config/custom.colors.dart';
-import 'package:greengrocer/src/models/item.model.dart';
-import 'package:greengrocer/src/pages/components/HeroImage.component.dart';
-import 'package:greengrocer/src/pages/components/quantity.component.dart';
+import 'package:greengrocer/src/config/custom_colors.dart';
+import 'package:greengrocer/src/models/item_model.dart';
+import 'package:greengrocer/src/pages/components/HeroImage_component.dart';
+import 'package:greengrocer/src/pages/components/quantity_component.dart';
 import 'package:greengrocer/src/services/utils.service.dart';
 
 class ProductScreen extends StatefulWidget {
-  ProductScreen({Key? key, required this.item}) : super(key: key);
+  const ProductScreen({Key? key, required this.item}) : super(key: key);
 
   final ItemModel item;
 

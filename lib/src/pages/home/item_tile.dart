@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:greengrocer/src/config/custom.colors.dart';
-import 'package:greengrocer/src/models/item.model.dart';
-import 'package:greengrocer/src/pages/components/HeroImage.component.dart';
-import 'package:greengrocer/src/pages/product/product.screen.dart';
+import 'package:greengrocer/src/config/custom_colors.dart';
+import 'package:greengrocer/src/models/item_model.dart';
+import 'package:greengrocer/src/pages/components/HeroImage_component.dart';
+import 'package:greengrocer/src/pages/product/product_screen.dart';
 import 'package:greengrocer/src/services/utils.service.dart';
 
 class ItemTile extends StatefulWidget {
   final ItemModel item;
   final void Function(GlobalKey) cartAnimationMethod;
 
-  ItemTile({Key? key, required this.item, required this.cartAnimationMethod})
+  const ItemTile(
+      {Key? key, required this.item, required this.cartAnimationMethod})
       : super(key: key);
 
   @override
