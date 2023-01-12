@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:greengrocer/src/config/custom_colors.dart';
+import 'package:greengrocer/src/pages/auth/controller/auth_controller.dart';
 import 'package:greengrocer/src/pages/components/greengrocer_logo.dart';
-import 'package:greengrocer/src/routes/app.pages.dart';
 
+// USADO PARA TELA ANTES DA VALIDAÇÃO VIA SERVIDOR
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
 
@@ -14,9 +15,12 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
-    Future.delayed(const Duration(seconds: 2), () {
-      Get.offNamed(PagesRoutes.signInRoute);
-    });
+    super.initState();
+    // Future.delayed(const Duration(seconds: 2), () {
+    //   Get.offNamed(PagesRoutes.signInRoute);
+    // });
+
+    Get.find<AuthController>().validateToken();
   }
 
   @override
