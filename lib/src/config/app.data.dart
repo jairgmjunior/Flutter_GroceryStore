@@ -4,6 +4,7 @@ import 'package:greengrocer/src/models/order_model.dart';
 import 'package:greengrocer/src/models/user_model.dart';
 
 ItemModel apple = ItemModel(
+  id: "1",
   itemName: 'Maçã',
   imgUrl: 'assets/fruits/apple-1.webp',
   unit: 'kg',
@@ -13,6 +14,7 @@ ItemModel apple = ItemModel(
 );
 
 ItemModel grape = ItemModel(
+  id: "2",
   itemName: 'Uva',
   imgUrl: 'assets/fruits/grape.png',
   unit: 'kg',
@@ -22,6 +24,7 @@ ItemModel grape = ItemModel(
 );
 
 ItemModel guava = ItemModel(
+  id: "3",
   itemName: 'Goiaba',
   imgUrl: 'assets/fruits/guava.png',
   unit: 'kg',
@@ -31,6 +34,7 @@ ItemModel guava = ItemModel(
 );
 
 ItemModel kiwi = ItemModel(
+  id: "4",
   itemName: 'kiwi',
   imgUrl: 'assets/fruits/kiwi.png',
   unit: 'un',
@@ -40,6 +44,7 @@ ItemModel kiwi = ItemModel(
 );
 
 ItemModel mango = ItemModel(
+  id: "5",
   itemName: 'Manga',
   imgUrl: 'assets/fruits/mango.png',
   unit: 'un',
@@ -49,6 +54,7 @@ ItemModel mango = ItemModel(
 );
 
 ItemModel papaya = ItemModel(
+  id: "6",
   itemName: 'Mamão Papaya',
   imgUrl: 'assets/fruits/papaya.png',
   unit: 'kg',

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:greengrocer/src/config/custom_colors.dart';
 import 'package:greengrocer/src/models/item_model.dart';
-import 'package:greengrocer/src/pages/components/HeroImage_component.dart';
 import 'package:greengrocer/src/pages/product/product_screen.dart';
 import 'package:greengrocer/src/services/utils.service.dart';
 
@@ -68,7 +67,7 @@ class _ItemTileState extends State<ItemTile> {
                   Expanded(
                     child: Hero(
                       tag: widget.item.imgUrl,
-                      child: Image.asset(
+                      child: Image.network(
                         widget.item.imgUrl,
                         key: imageGk,
                       ),
