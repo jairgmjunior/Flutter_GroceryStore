@@ -1,3 +1,8 @@
+//flutter pub run build_runner watch
+//flutter pub run build_runner build
+
+//pra funcionar tem que adicionar primeiramente um factory dentro da class
+
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:greengrocer/src/models/user_model.dart';
 

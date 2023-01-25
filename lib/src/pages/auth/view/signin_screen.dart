@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:greengrocer/src/pages/auth/controller/auth_controller.dart';
+import 'package:greengrocer/src/pages/auth/view/components/forgot_password.dart';
 import 'package:greengrocer/src/pages/auth/view/signin_sup_screen.dart';
 import 'package:greengrocer/src/pages/components/custom_textfield.dart';
 import 'package:greengrocer/src/config/custom_colors.dart';
 import 'package:get/get.dart';
 import 'package:greengrocer/src/routes/app.pages.dart';
+import 'package:greengrocer/src/services/utils.service.dart';
+import 'package:greengrocer/src/services/validators.dart';
 
 class SigninScreen extends StatelessWidget {
   SigninScreen({Key? key}) : super(key: key);
@@ -17,6 +20,7 @@ class SigninScreen extends StatelessWidget {
 
     final emailController = TextEditingController();
     final passwordController = TextEditingController();
+    final utilServices = UtilService();
 
     return Scaffold(
       backgroundColor: CustomColors.customSwatchColor,
@@ -52,38 +56,16 @@ class SigninScreen extends StatelessWidget {
                       children: [
                         //Inputs
                         CustomTextField(
-                          controller: emailController,
-                          icon: Icons.email,
-                          label: 'E-mail',
-                          validator: (email) {
-                            if (email == null || email.isEmpty) {
-                              return 'Digite seu email!';
-                            }
-
-                            if (!email.isEmail) {
-                              return 'Digite um email válido!';
-                            }
-
-                            return null;
-                          },
-                        ),
+                            controller: emailController,
+                            icon: Icons.email,
+                            label: 'E-mail',
+                            validator: emailValidator),
                         CustomTextField(
-                          controller: passwordController,
-                          icon: Icons.lock,
-                          label: 'Senha',
-                          isSecret: true,
-                          validator: (password) {
-                            if (password == null || password.isEmpty) {
-                              return 'Digite sua senha';
-                            }
-
-                            if (password.length < 7) {
-                              return 'Digite uma senha com no mínimo 7 caracteres';
-                            }
-
-                            return null;
-                          },
-                        ),
+                            controller: passwordController,
+                            icon: Icons.lock,
+                            label: 'Senha',
+                            isSecret: true,
+                            validator: passwordValidator),
 
                         //Botão Entrar
                         SizedBox(
@@ -125,7 +107,22 @@ class SigninScreen extends StatelessWidget {
                         Align(
                           alignment: Alignment.centerRight,
                           child: TextButton(
-                            onPressed: () {},
+                            onPressed: () async {
+                              final bool? result = await showDialog(
+                                  context: context,
+                                  builder: (_) {
+                                    return ForgotPasswordDialog(
+                                      email: emailController.text,
+                                    );
+                                  });
+
+                              if (result ?? false) {
+                                utilServices.showToast(
+                                  message:
+                                      'Link de recuperação enviado para o seu email',
+                                );
+                              }
+                            },
                             child: Text(
                               'Esqueceu a senha?',
                               style: TextStyle(
@@ -180,7 +177,7 @@ class SigninScreen extends StatelessWidget {
                               Get.toNamed(PagesRoutes.signUpRoute);
                             },
                             child: const Text(
-                              'Criar Senha',
+                              'Criar Usuário',
                               style: TextStyle(fontSize: 18),
                             ),
                           ),
